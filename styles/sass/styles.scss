@@ -1,0 +1,486 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+
+%noSelection {
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none; /* Likely future */
+}
+
+//Font Colors
+$very-dark-blue: rgb(35, 48, 62);
+$very-dark-grayish-blue: rgb(90, 99, 108);
+$dark-grayish-blue: rgb(129, 132, 152);
+$grayish-blue: rgb(167, 171, 174);
+
+$dark-blue: hsl(167, 40%, 24%);
+$dark-cyan: hsl(198, 62%, 26%);
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: Fraunces;
+}
+
+p {
+	font-size: 18px;
+	font-family: Barlow;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+
+	@extend %noSelection;
+}
+
+.page {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
+	grid-template-areas:
+		"nav 				 nav 				 nav							 nav"
+		"header 			 header 			 header					 header"
+		"transform-text transform-text transform-img transform-img"
+		"standOut-img   standOut-img   standOut-text standOut-text"
+		"graphicDesign  graphicDesign  photography	  photography"
+		"testimonials   testimonials   testimonials	 testimonials"
+		"gallery-1		 gallery-2		 gallery-3			 gallery-4"
+		"footer			 footer  		 footer 					 footer";
+
+	&__nav {
+		grid-area: nav;
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 1rem 2rem;
+		background: rgba(62, 191, 255);
+		z-index: 1;
+
+		&-logo {
+			display: flex;
+			align-items: center;
+
+			img {
+				width: 150px;
+				height: 33px;
+			}
+		}
+
+		&-links {
+			display: flex;
+			gap: 3rem;
+			color: white;
+
+			&--hover {
+				padding: 0 20px;
+				border-radius: 30px;
+				background-image: linear-gradient(
+					120deg,
+					rgba(255, 255, 255, 1) 0%,
+					rgba(255, 255, 255, 1) 100%
+				);
+				background-repeat: no-repeat;
+				background-size: 100% 0rem;
+				background-position: 0 50%;
+				transition: background-size 0.2s ease-out;
+				&:hover {
+					color: black;
+					background-size: 100% 100%;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	&__hero {
+		position: relative;
+		grid-area: header;
+
+		&-headline {
+			position: absolute;
+			top: 20%;
+			width: 100%;
+			text-align: center;
+
+			h1 {
+				color: white;
+				font-size: 3rem;
+				letter-spacing: 0.8rem;
+			}
+		}
+
+		&-arrow {
+			position: absolute;
+			top: 42%;
+			width: 100%;
+			text-align: center;
+
+			img {
+				width: 35px;
+				transition: transform 0.5s ease-out;
+			}
+
+			img:hover {
+				transform: translateY(40px);
+			}
+		}
+	}
+
+	&__transform-text {
+		grid-area: transform-text;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 4rem;
+
+		&--underline {
+			background-image: linear-gradient(
+				120deg,
+				rgb(250, 212, 0, 0.4) 0%,
+				rgb(250, 212, 0, 0.4) 100%
+			);
+			background-repeat: no-repeat;
+			background-size: 100% 0.4em;
+			background-position: 0 88%;
+			transition: background-size 0.25s ease-in;
+			&:hover {
+				background-size: 100% 88%;
+				cursor: pointer;
+			}
+		}
+
+		h1 {
+			font-size: 3.5rem;
+			font-weight: 900;
+			color: $very-dark-blue;
+		}
+
+		h3 {
+			font-size: 1.2rem;
+			font-weight: 900;
+			color: $very-dark-blue;
+		}
+
+		p {
+			font-size: 1.2rem;
+			line-height: 1.9rem;
+			color: $dark-grayish-blue;
+		}
+	}
+
+	&__transform-img {
+		grid-area: transform-img;
+	}
+
+	&__standOut-img {
+		grid-area: standOut-img;
+	}
+
+	&__standOut-text {
+		grid-area: standOut-text;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 4rem;
+
+		&--underline {
+			background-image: linear-gradient(
+				120deg,
+				rgb(254, 120, 103, 0.4) 0%,
+				rgb(254, 120, 103, 0.4) 100%
+			);
+			background-repeat: no-repeat;
+			background-size: 100% 0.4em;
+			background-position: 0 88%;
+			transition: background-size 0.25s ease-in;
+			&:hover {
+				background-size: 100% 88%;
+				cursor: pointer;
+			}
+		}
+
+		h1 {
+			font-size: 3.7rem;
+			font-weight: 900;
+			color: $very-dark-blue;
+		}
+
+		h3 {
+			font-size: 1.2rem;
+			font-weight: 900;
+			color: $very-dark-blue;
+		}
+
+		p {
+			color: $dark-grayish-blue;
+		}
+	}
+
+	&__graphicDesign {
+		grid-area: graphicDesign;
+		position: relative;
+
+		h1 {
+			position: absolute;
+			top: 55%;
+			width: 100%;
+			color: $dark-blue;
+			font-size: 2.2rem;
+			text-align: center;
+			z-index: 2;
+		}
+
+		p {
+			position: absolute;
+			top: 65%;
+			width: 100%;
+			padding: 0 3rem;
+			color: $dark-blue;
+			font-size: 1.1rem;
+			line-height: 2rem;
+			text-align: center;
+			z-index: 2;
+		}
+	}
+
+	&__photography {
+		grid-area: photography;
+		position: relative;
+
+		h1 {
+			position: absolute;
+			top: 55%;
+			width: 100%;
+			color: $dark-cyan;
+			font-size: 2.2rem;
+			text-align: center;
+			z-index: 2;
+		}
+
+		p {
+			position: absolute;
+			top: 65%;
+			width: 100%;
+			padding: 0 3rem;
+			color: $dark-cyan;
+			line-height: 2rem;
+			text-align: center;
+			z-index: 2;
+		}
+	}
+
+	&__testimonials {
+		grid-area: testimonials;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		height: 850px;
+
+		h3 {
+			letter-spacing: 0.35rem;
+		}
+
+		&-header {
+			text-align: center;
+			color: $grayish-blue;
+		}
+
+		&-content {
+			display: flex;
+			margin-top: 5rem;
+		}
+
+		&-1,
+		&-2,
+		&-3 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			height: 100%;
+
+			&-img-text {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			&-text {
+				text-align: center;
+				margin-top: 2rem;
+				padding: 0 3rem;
+				color: hsl(213, 9%, 39%);
+				line-height: 1.8rem;
+			}
+
+			&-name {
+				margin-top: 2rem;
+				text-align: center;
+
+				h4 {
+					margin-bottom: 0;
+					color: $very-dark-blue;
+					font-size: 1.3rem;
+					font-weight: 900;
+				}
+
+				p {
+					color: $grayish-blue;
+				}
+			}
+		}
+
+		img {
+			width: 74px;
+			height: 74px;
+			border-radius: 50%;
+		}
+	}
+	&__gallery-img {
+		&-1 {
+			grid-area: gallery-1;
+		}
+		&-2 {
+			grid-area: gallery-2;
+		}
+		&-3 {
+			grid-area: gallery-3;
+		}
+		&-4 {
+			grid-area: gallery-4;
+		}
+
+		&-1,
+		&-2,
+		&-3,
+		&-4 {
+			background: rgba(144, 212, 197);
+
+			img {
+				height: 90%;
+			}
+		}
+	}
+
+	&__footer {
+		grid-area: footer;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 250px;
+		background: rgba(144, 212, 197);
+
+		&-logo {
+			margin-bottom: 1rem;
+
+			img {
+				width: 150px;
+				filter: invert(55%) sepia(17%) saturate(1015%) hue-rotate(116deg)
+					brightness(86%) contrast(92%);
+			}
+		}
+
+		&-links {
+			display: flex;
+			margin-bottom: 3.5rem;
+			gap: 3rem;
+			color: rgb(69, 140, 126);
+
+			:hover {
+				cursor: pointer;
+			}
+		}
+
+		&-social {
+			display: flex;
+			margin-bottom: 3rem;
+			gap: 1rem;
+
+			img {
+				width: 20px;
+			}
+
+			:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+@media (max-width: 1040px) {
+	.page {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"nav"
+			"header"
+			"transform-img"
+			"transform-text"
+			"standOut-img"
+			"standOut-text"
+			"graphicDesign"
+			"photography"
+			"testimonials"
+			"testimonials"
+			"footer";
+
+		&__gallery-img {
+			&-1,
+			&-2,
+			&-3,
+			&-4 {
+				display: none;
+			}
+		}
+
+		&__nav-links {
+			gap: 1rem;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.page {
+		&__nav {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		&__hero {
+			&-headline {
+				top: 30%;
+
+				h1 {
+					font-size: 2.25rem;
+				}
+			}
+
+			&-arrow {
+				top: 70%;
+
+				img {
+					width: 25px;
+				}
+			}
+		}
+	}
+}

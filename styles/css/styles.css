@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+img {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Fraunces;
+}
+
+p {
+  font-size: 18px;
+  font-family: Barlow;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "nav 				 nav 				 nav							 nav" "header 			 header 			 header					 header" "transform-text transform-text transform-img transform-img" "standOut-img   standOut-img   standOut-text standOut-text" "graphicDesign  graphicDesign  photography	  photography" "testimonials   testimonials   testimonials	 testimonials" "gallery-1		 gallery-2		 gallery-3			 gallery-4" "footer			 footer  		 footer 					 footer";
+}
+.page__nav {
+  grid-area: nav;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #3ebfff;
+  z-index: 1;
+}
+.page__nav-logo {
+  display: flex;
+  align-items: center;
+}
+.page__nav-logo img {
+  width: 150px;
+  height: 33px;
+}
+.page__nav-links {
+  display: flex;
+  gap: 3rem;
+  color: white;
+}
+.page__nav-links--hover {
+  padding: 0 20px;
+  border-radius: 30px;
+  background-image: linear-gradient(120deg, white 0%, white 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0rem;
+  background-position: 0 50%;
+  transition: background-size 0.2s ease-out;
+}
+.page__nav-links--hover:hover {
+  color: black;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.page__hero {
+  position: relative;
+  grid-area: header;
+}
+.page__hero-headline {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+}
+.page__hero-headline h1 {
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 0.8rem;
+}
+.page__hero-arrow {
+  position: absolute;
+  top: 42%;
+  width: 100%;
+  text-align: center;
+}
+.page__hero-arrow img {
+  width: 35px;
+  transition: transform 0.5s ease-out;
+}
+.page__hero-arrow img:hover {
+  transform: translateY(40px);
+}
+.page__transform-text {
+  grid-area: transform-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 4rem;
+}
+.page__transform-text--underline {
+  background-image: linear-gradient(120deg, rgba(250, 212, 0, 0.4) 0%, rgba(250, 212, 0, 0.4) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.4em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+.page__transform-text--underline:hover {
+  background-size: 100% 88%;
+  cursor: pointer;
+}
+.page__transform-text h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #23303e;
+}
+.page__transform-text h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #23303e;
+}
+.page__transform-text p {
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  color: #818498;
+}
+.page__transform-img {
+  grid-area: transform-img;
+}
+.page__standOut-img {
+  grid-area: standOut-img;
+}
+.page__standOut-text {
+  grid-area: standOut-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 4rem;
+}
+.page__standOut-text--underline {
+  background-image: linear-gradient(120deg, rgba(254, 120, 103, 0.4) 0%, rgba(254, 120, 103, 0.4) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.4em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+.page__standOut-text--underline:hover {
+  background-size: 100% 88%;
+  cursor: pointer;
+}
+.page__standOut-text h1 {
+  font-size: 3.7rem;
+  font-weight: 900;
+  color: #23303e;
+}
+.page__standOut-text h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #23303e;
+}
+.page__standOut-text p {
+  color: #818498;
+}
+.page__graphicDesign {
+  grid-area: graphicDesign;
+  position: relative;
+}
+.page__graphicDesign h1 {
+  position: absolute;
+  top: 55%;
+  width: 100%;
+  color: #25564b;
+  font-size: 2.2rem;
+  text-align: center;
+  z-index: 2;
+}
+.page__graphicDesign p {
+  position: absolute;
+  top: 65%;
+  width: 100%;
+  padding: 0 3rem;
+  color: #25564b;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  text-align: center;
+  z-index: 2;
+}
+.page__photography {
+  grid-area: photography;
+  position: relative;
+}
+.page__photography h1 {
+  position: absolute;
+  top: 55%;
+  width: 100%;
+  color: #19536b;
+  font-size: 2.2rem;
+  text-align: center;
+  z-index: 2;
+}
+.page__photography p {
+  position: absolute;
+  top: 65%;
+  width: 100%;
+  padding: 0 3rem;
+  color: #19536b;
+  line-height: 2rem;
+  text-align: center;
+  z-index: 2;
+}
+.page__testimonials {
+  grid-area: testimonials;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 850px;
+}
+.page__testimonials h3 {
+  letter-spacing: 0.35rem;
+}
+.page__testimonials-header {
+  text-align: center;
+  color: #a7abae;
+}
+.page__testimonials-content {
+  display: flex;
+  margin-top: 5rem;
+}
+.page__testimonials-1, .page__testimonials-2, .page__testimonials-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.page__testimonials-1-img-text, .page__testimonials-2-img-text, .page__testimonials-3-img-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page__testimonials-1-text, .page__testimonials-2-text, .page__testimonials-3-text {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0 3rem;
+  color: #5a636c;
+  line-height: 1.8rem;
+}
+.page__testimonials-1-name, .page__testimonials-2-name, .page__testimonials-3-name {
+  margin-top: 2rem;
+  text-align: center;
+}
+.page__testimonials-1-name h4, .page__testimonials-2-name h4, .page__testimonials-3-name h4 {
+  margin-bottom: 0;
+  color: #23303e;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+.page__testimonials-1-name p, .page__testimonials-2-name p, .page__testimonials-3-name p {
+  color: #a7abae;
+}
+.page__testimonials img {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+}
+.page__gallery-img-1 {
+  grid-area: gallery-1;
+}
+.page__gallery-img-2 {
+  grid-area: gallery-2;
+}
+.page__gallery-img-3 {
+  grid-area: gallery-3;
+}
+.page__gallery-img-4 {
+  grid-area: gallery-4;
+}
+.page__gallery-img-1, .page__gallery-img-2, .page__gallery-img-3, .page__gallery-img-4 {
+  background: #90d4c5;
+}
+.page__gallery-img-1 img, .page__gallery-img-2 img, .page__gallery-img-3 img, .page__gallery-img-4 img {
+  height: 90%;
+}
+.page__footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  background: #90d4c5;
+}
+.page__footer-logo {
+  margin-bottom: 1rem;
+}
+.page__footer-logo img {
+  width: 150px;
+  filter: invert(55%) sepia(17%) saturate(1015%) hue-rotate(116deg) brightness(86%) contrast(92%);
+}
+.page__footer-links {
+  display: flex;
+  margin-bottom: 3.5rem;
+  gap: 3rem;
+  color: #458c7e;
+}
+.page__footer-links :hover {
+  cursor: pointer;
+}
+.page__footer-social {
+  display: flex;
+  margin-bottom: 3rem;
+  gap: 1rem;
+}
+.page__footer-social img {
+  width: 20px;
+}
+.page__footer-social :hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1040px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav" "header" "transform-img" "transform-text" "standOut-img" "standOut-text" "graphicDesign" "photography" "testimonials" "testimonials" "footer";
+  }
+  .page__gallery-img-1, .page__gallery-img-2, .page__gallery-img-3, .page__gallery-img-4 {
+    display: none;
+  }
+  .page__nav-links {
+    gap: 1rem;
+  }
+}
+@media (max-width: 800px) {
+  .page__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .page__hero-headline {
+    top: 30%;
+  }
+  .page__hero-headline h1 {
+    font-size: 2.25rem;
+  }
+  .page__hero-arrow {
+    top: 70%;
+  }
+  .page__hero-arrow img {
+    width: 25px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
